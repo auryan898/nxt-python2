@@ -474,7 +474,7 @@ the sensor but not tested. Please report whether this worked for you or not!"""
         'p4pos': (0x45, 'B'),
         'p5pos': (0x46, 'B'),
         'p6pos': (0x47, 'B'),
-        'pwm': (0x46, 'B'),
+        'pwm': (0x48, 'B'),
     })
     
     class Status:
@@ -604,7 +604,7 @@ MotorCon.PID_Data(p, i, d) format.
     def get_battery_voltage(self):
         """Gets the battery voltage (in millivolts/20)
         """
-        high, low = self.read_value('bateryvoltage')[0]
+        high, low = self.read_value('batteryvoltage')[0]
         return high << 2 + low
 
 MotorCon.add_compatible_sensor(None, 'HiTechnc', 'MotorCon')
